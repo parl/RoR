@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
 class Users::PasswordsController < Devise::PasswordsController
-  before_action :configure_sign_up_params, only: [:create]
 
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :password, :password_confirmation])
-  end
   # GET /resource/password/new
   # def new
   #   super
@@ -37,9 +33,5 @@ class Users::PasswordsController < Devise::PasswordsController
   #   super(resource_name)
   # end
   
-  private
 
-  def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
-  end
 end
