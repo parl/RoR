@@ -1,0 +1,21 @@
+<%= form_for @book do |f| %>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :tahun_terbit %>
+      <%= f.number_field :tahun_terbit %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :author_id, "Penulis" %>
+      <%= f.collection_select :author_id, Author.all, :id, :name, prompt: "Pilih penulis" %>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit "Buat Buku" %>
+    </div>
+  <% end %>
+  

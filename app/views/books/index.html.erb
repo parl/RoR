@@ -1,0 +1,23 @@
+<!-- app/views/books/index.html.erb -->
+<h1>Daftar Buku</h1>
+<div class="actions">
+  <button><%= link_to "Buat Buku Baru", new_book_path, class: "btn btn-primary" %></button>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Judul</th>
+      <th>Penulis</th>
+      <th>Tahun Terbit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.author.name %></td>
+        <td><%= book.tahun_terbit %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
