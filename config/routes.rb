@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'books/index'
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   devise_for :users, controllers: {
   registrations: 'users/registrations'
